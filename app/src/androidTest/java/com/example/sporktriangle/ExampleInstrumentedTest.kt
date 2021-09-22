@@ -21,4 +21,11 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.example.sporktriangle", appContext.packageName)
     }
+
+    @Test
+    fun testTriangleType()
+    {
+        val triangleType = check_triangle(7, 7,7)
+        assertEquals(triangleType, "Equilateral")
+    }
 }
