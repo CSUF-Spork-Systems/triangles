@@ -1,5 +1,6 @@
 package com.example.sporktriangle
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var inputLength2: EditText
     private lateinit var inputLength3: EditText
     private lateinit var button: Button
+    private lateinit var button2: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val textAnswer = findViewById<TextView>(R.id.textViewAnswer)
 
         button = findViewById(R.id.goButton)
+        button2 = findViewById(R.id.exitBtn)
 
 //       Takes in user input values on button click and turns them into integers
         button.setOnClickListener {
@@ -59,6 +62,11 @@ class MainActivity : AppCompatActivity() {
                 else{
                 Toast.makeText(this, "Fill in All inputs", Toast.LENGTH_LONG).show()
             }
+        }
+
+        button2.setOnClickListener{
+            startActivity(Intent(this@MainActivity, EndActivity2::class.java))
+
         }
     }
 
