@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Spork Triangle</string>
+    <string name="not_a_triangle">Not a Triangle</string>
+    <string name="equilateral">Equilateral</string>
+    <string name="isosceles">Isosceles</string>
+    <string name="scalene">Scalene</string>
 </resources>
