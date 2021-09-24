@@ -3,10 +3,14 @@ package com.example.sporktriangle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import kotlin.system.exitProcess
+import java.lang.System.exit as systemExit
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         button = findViewById(R.id.goButton)
         button2 = findViewById(R.id.exitBtn)
+
+
 
 //       Takes in user input values on button click and turns them into integers
         button.setOnClickListener {
@@ -66,8 +72,17 @@ class MainActivity : AppCompatActivity() {
 
         button2.setOnClickListener{
             startActivity(Intent(this@MainActivity, EndActivity2::class.java))
-
+            handle()
         }
+
+
     }
+    //terminates application
+    private fun quitApp() {
+        this@MainActivity.finish()
+        exitProcess(0)
+    }
+    //delays application terminating by 3 seconds
+    private fun handle() = Handler().postDelayed({quitApp()}, 3000)
 
 }

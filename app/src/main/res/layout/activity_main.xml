@@ -82,7 +82,8 @@
         android:layout_height="50dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumber"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/textViewAnswer"
